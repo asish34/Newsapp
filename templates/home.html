@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+    {% block content %}
+   <link href="{% static 'home.css' %}" rel="stylesheet"/>
+    <section id="carsoul">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="carsol1" src="{{carsol1}}" class="d-block w-100 nw" alt="..." >
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Top Trending</h5>
+              <!-- <p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img  id="carsol2" src="{{carsol2}}" class="d-block w-100 nw" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Top Trending</h5>
+              <!-- <p>Some representative placeholder content for the second slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img id="carsol3" src="{{carsol3}}" class="d-block w-100 nw" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Top Trending</h5>
+              <!-- <p>Some representative placeholder content for the third slide.</p> -->
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="news">
+      {% for i in news %}
+        <div class="heading">
+            <div>
+                <img src="{{i.urlToImage}}" class="img">
+            </div>
+            <div class="content">
+                <a href="{{i.url}}"><h4>{{i.title}}</h4></a>
+                <p class="source">by   {{i.source.name}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- <div class="heading">
+            <div >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Pt8WjJaIhpQ7ORaI6Zn9Bl4nsIm49XHOYQ&usqp=CAU" class="img">
+            </div>
+            <div class="content">
+                <h3>heading</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatibus tempore nemo voluptatum possimus.</p>
+                <p class="source">by..........</p>
+            </div>
+        </div> -->
+    </section>
+    
+    {% endblock content %}
+
+ 
